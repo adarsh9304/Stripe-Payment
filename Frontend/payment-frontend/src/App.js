@@ -95,7 +95,7 @@ export default function App() {
 
   const handleCheckout = async (e) => {
     e.preventDefault();
-    const response = await fetch('http://localhost:4242/create-checkout-session', {
+    const response = await fetch('http://localhost:4000/api/v1/create-checkout-session', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -109,7 +109,7 @@ export default function App() {
         }))
       }),
     });
-    const url = await response.text();  // Get URL from response
+    const url = await response.text();  
      console.log(url)
     window.location.href = url;
   };
